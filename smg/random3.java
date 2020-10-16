@@ -23,7 +23,7 @@ public class random3{
              break;
           }
       }
-    for(int k = 0; k<9;k++){
+    for(int k = 0; k<10;k++){
         System.out.println(arr3[k]);
         }
      }
