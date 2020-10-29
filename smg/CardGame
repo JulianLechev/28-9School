@@ -1,0 +1,55 @@
+import java.util.Scanner;
+import java.util.Random;
+public class HelloWorld {
+ 
+    public static void main(String[] args) {
+    int[] deck = new int[52];
+    Scanner scanner = new Scanner(System.in);
+    int randomNum = 0;
+    int[] drawnCards = new int[4];
+    for(int i = 0; i < 52; i++){
+       randomNum = (int)(Math.random() * 52);
+      int swap = deck[i];
+      deck[i] = deck[randomNum];
+      deck[randomNum] = swap;
+    }
+    for(int i = 0; i < 4; i++){
+      randomNum = (int)(Math.random() * (52-i));
+      drawnCards[i] = deck[randomNum];
+      for(int j = 0; j <deck.lenght - i-1; j++){
+        deck[j] = deck[j+1];
+      }
+      deck[deck.lenght - i - 1] = -1;
+    }
+    for(int i = 0; i < 4; i++){
+    System.out.println("Pick a card");
+    int card = scanner.nextInt();
+    int cardColour = card/13;
+    String cardColour2 = "";
+    int cardNumber = card%13;
+      String cardNumber2 = "";
+    switch (cardColour){
+      case 0: cardColour2 = "clubs"; break;
+      case 1: cardColour2 = "diamonds"; break;
+      case 2: cardColour2 = "hearts"; break;
+      case 3: cardColour2 = "spades"; break;
+    }
+    switch (cardNumber){
+      case 0: cardNumber2 = "2"; break;
+      case 1: cardNumber2 = "3"; break;  
+      case 2: cardNumber2 = "4"; break;
+      case 3: cardNumber2 = "5"; break;
+      case 4: cardNumber2 = "6"; break;
+      case 5: cardNumber2 = "7"; break;
+      case 6: cardNumber2 = "8"; break;
+      case 7: cardNumber2 = "9"; break;
+      case 8: cardNumber2 = "10"; break;
+      case 9: cardNumber2 = "J"; break;
+      case 10: cardNumber2 = "Q"; break;
+      case 11: cardNumber2 = "K"; break;
+      case 12: cardNumber2 = "A"; break;
+    }
+    System.out.println("Your card is the" + cardNumber2 + " of " + cardColour2);
+    }
+    }
+}
