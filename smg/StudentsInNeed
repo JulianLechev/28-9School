@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+public class Student{
+  public String name;
+  public double grade;
+  
+  public Student(){}
+  
+  public Student(String name, double grade){
+    
+    this.name = name;
+    this.grade = grade;
+    
+    
+  }
+}
+
+
+
+public class StudentTest {
+    public static void main(String[] args) {
+      Scanner scanner = new Scanner(System.in);
+      Student students = new Student[5];
+      
+      for(int i = 0; i < 5; i++){
+        String name = scanner.nextLine();
+        double grade = scanner.nextDouble();
+        students[i] = new Student(name, grade);
+      }
+      
+      
+      
+    }
+    
+    
+    
+    public static void showWhichStudent(Student students[]){
+      for(Student showStudent : students){
+        if(inNeed(showStudent) == true){
+          System.out.println(showStudent.name);
+        }
+      }
+      
+    }
+    
+    public static boolean inNeed(Student student){
+      
+      if(students[i].grade > 5.50){
+        inNeed = true;
+      }
+      else{
+        inNeed = false;
+      }
+    }
+    
+    
+}
+
+
