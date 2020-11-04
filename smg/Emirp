@@ -1,0 +1,43 @@
+public class PalPrime {
+    public static void main(String[] args) {
+      
+      int count = 1;
+      int number = 10;
+      boolean obratnoIsPrime = true;
+      boolean isPrime = true;
+      while(count < 120){
+        int copy = number;
+        int obratno = 0;
+        while(copy >0){
+          int ost = copy%10;
+          obratno = obratno*10 + ost;
+          copy = copy/10;
+        }
+      
+        
+       
+       for(int i = 2; i < number; i++){
+       
+       if(number%i == 0){
+         isPrime = false;
+         break;
+       }
+       } 
+        for(int i = 2; i < obratno; i++){
+       
+       if(obratno%i == 0){
+         obratnoIsPrime = false;
+         break;
+       }
+       }
+        if(isPrime && obratnoIsPrime){
+          System.out.println(number);
+        }
+        number++;
+        count++;
+        
+      }
+      
+      
+    }
+}
