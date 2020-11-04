@@ -1,0 +1,135 @@
+
+public class TV {
+   public int channel;
+   public int volume;
+   public boolean isOn; 
+    
+
+
+public TV(){
+  channel = 1;
+  volume = 0;
+  isOn = false;
+  
+}
+
+public void tunrOn(){
+   if(isOn == true){
+    System.out.println("The TV is already on");
+  }
+  else{
+  isOn = true;
+  }
+}
+
+public void turnOff(){
+  if(isOn == false){
+    System.out.println("The TV is already off");
+  }
+  else{
+  isOn = false;
+  }
+}
+
+public void setChannel(int newChan){
+  if(isOn == false){
+    System.out.println("The TV is off");
+  }
+  else if(newChan > 120 || newChan < 1){
+    System.out.println("Enter a valid channel");
+  }
+  else{
+    channel = newChan;
+  }
+}
+
+
+public void setVolume(int newVol){
+  if(isOn == false){
+    System.out.println("The TV is off");
+  }
+  else if(newVol > 7 || newVol < 0){
+    System.out.println("Enter a valid volume");
+  }
+  else{
+    volume = newVol;
+  }
+}
+
+public void volumeDown(){
+  if(isOn == false){
+    System.out.println("The TV is off");
+  }
+  else if(volume == 0){
+    System.out.println("The volume cant be lower")
+  }
+  else{
+    volume--;
+  }
+}
+
+
+public void volumeUp(){
+  if(isOn == false){
+    System.out.println("The TV is off");
+  }
+  else if(volume == 7){
+    System.out.println("The volume cant be higher")
+  }
+  else{
+    volume++;
+  }
+}
+
+public void channelDown(){
+  if(isOn == false){
+    System.out.println("The TV is off");
+  }
+  else if(channel == 0){
+    channel = 120;
+  }
+  else{
+    channel--;
+  }
+}
+
+public void channelUp(){
+  if(isOn == false){
+    System.out.println("The TV is off");
+  }
+  else if(channel == 120){
+    channel = 0;
+  }
+  else{
+    channel++;
+  }
+}
+
+}
+
+
+public class TVTest{
+  
+  public static void main(String[] args){
+  
+  TV tv1 = new TV();
+  tv1.tunrOn();
+  System.out.println("Channel " + tv1.channel + " volume " + tv1.volume);
+  tv1.channelDown();
+  System.out.println("Channel " + tv1.channel + " volume " + tv1.volume);
+  tv1.channelUp();
+  System.out.println("Channel " + tv1.channel + " volume " + tv1.volume);
+  tv1.channelUp();
+  System.out.println("Channel " + tv1.channel + " volume " + tv1.volume);
+  tv1.setChannel(6);
+  System.out.println("Channel " + tv1.channel + " volume " + tv1.volume);
+  tv1.setVolume(5);
+  System.out.println("Channel " + tv1.channel + " volume " + tv1.volume);
+  
+  
+  }
+}
+
+
+
+
