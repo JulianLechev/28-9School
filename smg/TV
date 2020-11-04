@@ -61,7 +61,7 @@ public void volumeDown(){
     System.out.println("The TV is off");
   }
   else if(volume == 0){
-    System.out.println("The volume cant be lower")
+    System.out.println("The volume cant be lower");
   }
   else{
     volume--;
@@ -74,7 +74,7 @@ public void volumeUp(){
     System.out.println("The TV is off");
   }
   else if(volume == 7){
-    System.out.println("The volume cant be higher")
+    System.out.println("The volume cant be higher");
   }
   else{
     volume++;
